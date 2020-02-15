@@ -34,7 +34,7 @@
                         Contact</a></li>
                 </ul>
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
+                    <a id="login">
                         <span class="fa fa-sign-in">Login</span>
                     </a>
                 </span>
@@ -95,30 +95,47 @@
                         <div class="form-group row">
                             <label for="guestNo" class="col-12 col-sm-2 col-form-label">Number of Guests</label>
                             <div class="col-12 col-sm-8">
-                                <label class="radio-inline"><input type="radio" name="option" checked >1</label>
-                                <label class="radio-inline"><input type="radio" name="option">2</label>
-                                <label class="radio-inline"><input type="radio" name="option">3</label>
-                                <label class="radio-inline"><input type="radio" name="option">4</label>
-                                <label class="radio-inline"><input type="radio" name="option">5</label>
-                                <label class="radio-inline"><input type="radio" name="option">6</label>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" class="custom-control-input" id="Radio1" name="option" value="Option1">
+                                    <label class="custom-control-label" for="Radio1">1</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" class="custom-control-input" id="Radio2" name="option" value="Option2">
+                                    <label class="custom-control-label" for="Radio2">2</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" class="custom-control-input" id="Radio3" name="option" value="Option3">
+                                    <label class="custom-control-label" for="Radio3">3</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" class="custom-control-input" id="Radio4" name="option" value="Option4">
+                                    <label class="custom-control-label" for="Radio4">4</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" class="custom-control-input" id="Radio5" name="option" value="Option5">
+                                    <label class="custom-control-label" for="Radio5">5</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" class="custom-control-input" id="Radio6" name="option" value="Option6">
+                                    <label class="custom-control-label" for="Radio6">6</label>
+                                </div>
                             </div>
                         </div>
-
+                        
                         <div class="form-group row">
                             <label for="section" class="col-12 col-sm-2 col-form-label">Section</label>
                             <div class="col-12 col-sm-10">
                                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
                                     <label class="btn btn-success form-check-label active">
-                                      <input class="form-check-input" type="radio" name="options" id="nonSmoking" checked>
-                                      Non-Smoking
-                                    </label>
-                                    <label class="btn btn-danger form-check-label">
                                         <input class="form-check-input" type="radio" name="options" id="nonSmoking" checked>
                                         Non-Smoking
                                     </label>
+                                    <label class="btn btn-danger form-check-label">
+                                        <input class="form-check-input" type="radio" name="options" id="nonSmoking" checked>
+                                        Smoking
+                                    </label>
                                 </div>
                             </div>
-                            
                         </div>
                         
                         <div class="form-group row">
@@ -159,7 +176,7 @@
                     <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-6 col-sm-3 align-self-center test-center">
-                    <a data-toggle="modal" data-target="#reserveModal" class="btn btn-warning btn-block" role="button">
+                    <a id="reserveTable" class="btn btn-warning btn-block" role="button">
                         Reserve table
                     </a>
                 </div>
@@ -282,7 +299,6 @@
  <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script> 
  <script>
-      
      $(document).ready(function(){
          $('#mycarousel').carousel({interval:2000});
          $('#carouselButton').click(function(){
@@ -299,6 +315,16 @@
          });
      });
  </script>
+ <script>
+    $("#login").click(function(){
+        $('#loginModal').modal();
+    });
+</script>
+<script>
+    $("#reserveTable").click(function(){
+        $('#reserveModal').modal();
+    });
+</script>
 </body>
 
 </html>
